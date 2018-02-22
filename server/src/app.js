@@ -1,3 +1,14 @@
 // Root path
 global.APP_ROOT_PATH = __dirname
-console.log('global.APP_ROOT_PATH', global.APP_ROOT_PATH)
+
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const morgan = require('morgan')
+
+const app = express()
+app.use(morgan('combined'))
+app.use(bodyParser.json())
+app.use(cors())
+
+app.listen(process.env.PORT || 8081)
