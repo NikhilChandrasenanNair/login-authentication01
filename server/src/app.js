@@ -11,4 +11,10 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
+app.post('/register', (req, res) => {
+  res.send({
+    message: 'Registered'
+  })
+})
+
 app.listen(process.env.PORT || 8081)
